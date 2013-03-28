@@ -1,5 +1,5 @@
-ByteSize: Nicely File Sizes
-===========================
+ByteSize: Nicely Formatted File Sizes
+=====================================
 
 ByteSize is a utility component for formatting file sizes in various formats.
 It's currently a rough project and subject to some pretty major changes as I
@@ -16,7 +16,7 @@ Basic usage is very simple. Create an instance of `\ByteSize` and call its
 <?php
 
 // Default formatter is metric (kilobyte = 1000 bytes)
-$bytesize = new \ByteSize;
+$bytesize = new \ByteSize\ByteSize;
 
 // Outputs 1.44MB
 echo $bytesize->format(1440000);
@@ -36,7 +36,7 @@ that can be changed to any number in the range 0-10 inclusive.
 // Use the binary formatter with a default precision of 1
 $formatter = new \ByteSize\Formatter\Binary;
 $formatter->setPrecision(1);
-$bytesize = new ByteSize($formatter);
+$bytesize = new \ByteSize\ByteSize($formatter);
 
 // Outputs 1.4MiB
 echo $bytesize->format(1509949);
@@ -52,9 +52,11 @@ signatures are the same as the standard `format()` methods.
 ```php
 <?php
 
+use \ByteSize\ByteSize;
+
 // Static methods also work in a pinch
-echo \ByteSize::formatMetric(1440000); // 1.44MB
-echo \ByteSize::formatBinary(1509949); // 1.44MiB
+echo ByteSize::formatMetric(1440000); // 1.44MB
+echo ByteSize::formatBinary(1509949); // 1.44MiB
 ```
 
 
