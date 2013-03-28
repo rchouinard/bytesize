@@ -1,6 +1,6 @@
 {
     "name": "rych/bytesize",
-    "description": "Utilities for pretty-printing file sizes in various formats.",
+    "description": "Utility component for nicely formatted file sizes.",
     "authors": [
         {
             "name": "Ryan Chouinard",

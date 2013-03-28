@@ -9,8 +9,8 @@ think things through.
 Usage
 -----
 
-Basic usage is very simple. Create an instance of `\ByteSize` and call its
-`format()` method.
+Basic usage is very simple. Create an instance of `\ByteSize\ByteSize` and call
+its `format()` method.
 
 ```php
 <?php
@@ -23,7 +23,7 @@ echo $bytesize->format(1440000);
 ```
 
 The default formatter may be customized as well, using either the
-`\ByteSize\Formatter\Metric` or `ByteSize\Formatter\Binary` classes. The metric
+`\ByteSize\Formatter\Metric` or `\ByteSize\Formatter\Binary` classes. The metric
 formatter is based on a 1000-byte kilobyte and uses standard SI suffixes (kB,
 MB, GB, TB, etc). The binary formatter is based on a 1024-byte kilobyte and
 uses the standard binary suffixes (KiB, MiB, GiB, TiB, etc). Both formatters
