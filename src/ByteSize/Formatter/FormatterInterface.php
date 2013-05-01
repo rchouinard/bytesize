@@ -1,12 +1,22 @@
 <?php
 /**
+ * ByteSize - A File Size Formatting Component
  *
+ * @package ByteSize
+ * @author Ryan Chouinard <rchouinard at gmail.com>
+ * @license http://www.opensource.org/licenses/mit-license.html MIT License
+ * @link https://github.com/rchouinard/bytesize Project at GitHub
  */
 
 namespace ByteSize\Formatter;
 
 /**
  * Formatter interface
+ *
+ * @package ByteSize
+ * @author Ryan Chouinard <rchouinard at gmail.com>
+ * @license http://www.opensource.org/licenses/mit-license.html MIT License
+ * @link https://github.com/rchouinard/bytesize Project at GitHub
  */
 interface FormatterInterface
 {
