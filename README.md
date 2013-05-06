@@ -5,6 +5,8 @@ ByteSize is a utility component for formatting file sizes in various formats.
 It's currently a rough project and subject to some pretty major changes as I
 think things through.
 
+Build status: [![Build Status](https://travis-ci.org/rchouinard/bytesize.png?branch=master)](https://travis-ci.org/rchouinard/bytesize)
+
 
 Usage
 -----
