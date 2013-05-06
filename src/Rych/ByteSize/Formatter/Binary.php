@@ -2,21 +2,21 @@
 /**
  * ByteSize - A File Size Formatting Component
  *
- * @package ByteSize
- * @author Ryan Chouinard <rchouinard at gmail.com>
- * @license http://www.opensource.org/licenses/mit-license.html MIT License
- * @link https://github.com/rchouinard/bytesize Project at GitHub
+ * @package Rych\ByteSize
+ * @author Ryan Chouinard <rchouinard@gmail.com>
+ * @copyright Copyright (c) 2013, Ryan Chouinard
+ * @license MIT License - http://www.opensource.org/licenses/mit-license.php
  */
 
-namespace ByteSize\Formatter;
+namespace Rych\ByteSize\Formatter;
 
 /**
  * Binary file size formatter
  *
- * @package ByteSize
- * @author Ryan Chouinard <rchouinard at gmail.com>
- * @license http://www.opensource.org/licenses/mit-license.html MIT License
- * @link https://github.com/rchouinard/bytesize Project at GitHub
+ * @package Rych\ByteSize
+ * @author Ryan Chouinard <rchouinard@gmail.com>
+ * @copyright Copyright (c) 2013, Ryan Chouinard
+ * @license MIT License - http://www.opensource.org/licenses/mit-license.php
  * @link http://en.wikipedia.org/wiki/Binary_prefix Binary prefix at Wikipedia
  */
 final class Binary extends AbstractFormatter implements FormatterInterface

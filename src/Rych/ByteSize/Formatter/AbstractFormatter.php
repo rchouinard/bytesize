@@ -2,21 +2,21 @@
 /**
  * ByteSize - A File Size Formatting Component
  *
- * @package ByteSize
- * @author Ryan Chouinard <rchouinard at gmail.com>
- * @license http://www.opensource.org/licenses/mit-license.html MIT License
- * @link https://github.com/rchouinard/bytesize Project at GitHub
+ * @package Rych\ByteSize
+ * @author Ryan Chouinard <rchouinard@gmail.com>
+ * @copyright Copyright (c) 2013, Ryan Chouinard
+ * @license MIT License - http://www.opensource.org/licenses/mit-license.php
  */
 
-namespace ByteSize\Formatter;
+namespace Rych\ByteSize\Formatter;
 
 /**
  * Abstract formatter
  *
- * @package ByteSize
- * @author Ryan Chouinard <rchouinard at gmail.com>
- * @license http://www.opensource.org/licenses/mit-license.html MIT License
- * @link https://github.com/rchouinard/bytesize Project at GitHub
+ * @package Rych\ByteSize
+ * @author Ryan Chouinard <rchouinard@gmail.com>
+ * @copyright Copyright (c) 2013, Ryan Chouinard
+ * @license MIT License - http://www.opensource.org/licenses/mit-license.php
  */
 abstract class AbstractFormatter
 {
@@ -40,9 +40,9 @@ abstract class AbstractFormatter
      * Format input into a human-friendly string for display.
      *
      * @uses \bccomp()
-     * @uses \ByteSize\Formatter\AbstractFormatter::divPow()
-     * @uses \ByteSize\Formatter\AbstractFormatter::formatNumber()
-     * @uses \ByteSize\Formatter\AbstractFormatter::normalizeBytes()
+     * @uses \Rych\ByteSize\Formatter\AbstractFormatter::divPow()
+     * @uses \Rych\ByteSize\Formatter\AbstractFormatter::formatNumber()
+     * @uses \Rych\ByteSize\Formatter\AbstractFormatter::normalizeBytes()
      *
      * @param integer|string $bytes Integer or string representing the number
      *     of bytes.
@@ -78,10 +78,10 @@ abstract class AbstractFormatter
     /**
      * Set the default precision value.
      *
-     * @uses \ByteSize\Formatter\AbstractFormatter::normalizePrecision()
+     * @uses \Rych\ByteSize\Formatter\AbstractFormatter::normalizePrecision()
      *
      * @param integer $precision An integer between 0 and 10.
-     * @return \ByteSize\Formatter\AbstractFormatter Returns an instance of
+     * @return \Rych\ByteSize\Formatter\AbstractFormatter Returns an instance of
      *     self for method chaining.
      */
     public function setPrecision($precision)
@@ -114,7 +114,7 @@ abstract class AbstractFormatter
     /**
      * Format a number with the given suffix and precision.
      *
-     * @uses \ByteSize\Formatter\AbstractFormatter::normalizePrecision()
+     * @uses \Rych\ByteSize\Formatter\AbstractFormatter::normalizePrecision()
      *
      * @param integer|float $float The number to format.
      * @param string $suffix The suffix to attach.

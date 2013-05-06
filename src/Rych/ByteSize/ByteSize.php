@@ -2,35 +2,35 @@
 /**
  * ByteSize - A File Size Formatting Component
  *
- * @package ByteSize
- * @author Ryan Chouinard <rchouinard at gmail.com>
- * @license http://www.opensource.org/licenses/mit-license.html MIT License
- * @link https://github.com/rchouinard/bytesize Project at GitHub
+ * @package Rych\ByteSize
+ * @author Ryan Chouinard <rchouinard@gmail.com>
+ * @copyright Copyright (c) 2013, Ryan Chouinard
+ * @license MIT License - http://www.opensource.org/licenses/mit-license.php
  */
 
-namespace ByteSize;
+namespace Rych\ByteSize;
 
 /**
  * Main component class
  *
- * @package ByteSize
- * @author Ryan Chouinard <rchouinard at gmail.com>
- * @license http://www.opensource.org/licenses/mit-license.html MIT License
- * @link https://github.com/rchouinard/bytesize Project at GitHub
+ * @package Rych\ByteSize
+ * @author Ryan Chouinard <rchouinard@gmail.com>
+ * @copyright Copyright (c) 2013, Ryan Chouinard
+ * @license MIT License - http://www.opensource.org/licenses/mit-license.php
  */
 class ByteSize
 {
 
     /**
      *
-     * @var \ByteSize\Formatter\FormatterInterface
+     * @var \Rych\ByteSize\Formatter\FormatterInterface
      */
     protected $formatter;
 
     /**
      * Class constructor.
      *
-     * @param \ByteSize\Formatter\FormatterInterface $formatter
+     * @param \Rych\ByteSize\Formatter\FormatterInterface $formatter
      * @return void
      */
     public function __construct(Formatter\FormatterInterface $formatter = null)
@@ -59,8 +59,8 @@ class ByteSize
     /**
      * Static proxy to the binary formatter's format() method.
      *
-     * @staticvar \ByteSize\Formatter\Binary $formatter
-     * @uses \ByteSize\Formatter\Binary::format()
+     * @staticvar \Rych\ByteSize\Formatter\Binary $formatter
+     * @uses \Rych\ByteSize\Formatter\Binary::format()
      *
      * @param integer|string $bytes Integer or string representing the number
      *     of bytes.
@@ -81,8 +81,8 @@ class ByteSize
     /**
      * Static proxy to the metric formatter's format() method.
      *
-     * @staticvar \ByteSize\Formatter\Metric $formatter
-     * @uses \ByteSize\Formatter\Metric::format()
+     * @staticvar \Rych\ByteSize\Formatter\Metric $formatter
+     * @uses \Rych\ByteSize\Formatter\Metric::format()
      *
      * @param integer|string $bytes Integer or string representing the number
      *     of bytes.
