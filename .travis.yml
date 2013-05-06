@@ -3,5 +3,6 @@ php:
   - 5.3
   - 5.4
 before_script:
-  - composer dump-autoload
-script: phpunit
+  - composer self-update
+  - composer install --dev --no-interaction --prefer-source
+script: vendor/bin/phpunit --configuration phpunit.xml.dist
