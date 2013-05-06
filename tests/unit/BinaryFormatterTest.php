@@ -1,8 +1,8 @@
 <?php
 
-namespace ByteSize\UnitTest;
+namespace Rych\ByteSize\Tests;
 
-use ByteSize\Formatter\Binary as BinaryFormatter;
+use Rych\ByteSize\Formatter\Binary as BinaryFormatter;
 use PHPUnit_Framework_TestCase as TestCase;
 
 class BinaryConverterTest extends TestCase
