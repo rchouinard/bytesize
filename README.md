@@ -69,18 +69,27 @@ Just PHP 5.3+ and the BCMath extension. BCMath is used to handle very large
 integer values and file sizes greater than 2GB on 32-bit systems.
 
 
-Installation
+Installation via [Composer](http://getcomposer.org/)
 ------------
 
-Installation is managed via Composer:
+ * Install Composer to your project root:
+    ```bash
+    curl -sS https://getcomposer.org/installer | php
+    ```
 
-```json
-{
-  "require": {
-    "rych/bytesize": "1.0.*@dev"
-  }
-}
-```
+ * Add a `composer.json` file to your project:
+    ```json
+    {
+      "require" {
+        "rych/bytesize": "1.0.*@dev"
+      }
+    }
+    ```
+
+ * Run the Composer installer:
+    ```bash
+    php composer.phar install
+    ```
 
 
 Is that it?
