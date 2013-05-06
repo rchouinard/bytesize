@@ -76,7 +76,7 @@ Installation is managed via Composer:
 
 ```json
 "require": {
-    "rych/bytesize": "dev-master"
+    "rych/bytesize": "1.0.*@dev"
 }
 ```
 
