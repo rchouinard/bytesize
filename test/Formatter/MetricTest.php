@@ -1,18 +1,17 @@
 <?php
 
-namespace Rych\ByteSize\UnitTest;
+namespace Rych\ByteSize\Formatter;
 
-use Rych\ByteSize\Formatter\Metric as MetricFormatter;
 use PHPUnit_Framework_TestCase as TestCase;
 
-class MetricConverterTest extends TestCase
+class MetricTest extends TestCase
 {
 
     protected $formatter;
 
     public function setUp()
     {
-        $this->formatter = new MetricFormatter;
+        $this->formatter = new Metric();
     }
 
     public function testConvertMethod()

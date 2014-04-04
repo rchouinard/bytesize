@@ -1,18 +1,17 @@
 <?php
 
-namespace Rych\ByteSize\Tests;
+namespace Rych\ByteSize\Formatter;
 
-use Rych\ByteSize\Formatter\Binary as BinaryFormatter;
 use PHPUnit_Framework_TestCase as TestCase;
 
-class BinaryConverterTest extends TestCase
+class BinaryTest extends TestCase
 {
 
     protected $formatter;
 
     public function setUp()
     {
-        $this->formatter = new BinaryFormatter;
+        $this->formatter = new Binary();
     }
 
     public function testConvertMethod()

@@ -1,8 +1,7 @@
 <?php
 
-namespace Rych\ByteSize\Tests;
+namespace Rych\ByteSize;
 
-use Rych\ByteSize\ByteSize;
 use PHPUnit_Framework_TestCase as TestCase;
 
 class ByteSizeTest extends TestCase
