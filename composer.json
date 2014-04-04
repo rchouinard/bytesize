@@ -20,14 +20,8 @@
         "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
-        "psr-0": {
-            "Rych\\ByteSize": ""
-        }
-    },
-    "target-dir": "Rych/ByteSize",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
+        "psr-4": {
+            "Rych\\ByteSize\\": ""
         }
     }
 }

@@ -81,7 +81,7 @@ Installation via [Composer](http://getcomposer.org/)
     ```json
     {
       "require" {
-        "rych/bytesize": "1.0.*@dev"
+        "rych/bytesize": "1.0.*"
       }
     }
     ```
