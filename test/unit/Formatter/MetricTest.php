@@ -36,22 +36,48 @@ class MetricTest extends TestCase
     }
 
     /**
+     * Test that the format method honors the default precision
+     *
+     * @test
+     */
+    public function testFormatMethodHonorsDefaultPrecision()
+    {
+        $bytes = "2333333000"; // 2.333333 GB
+
+        $this->formatter->setPrecision(3);
+        $this->assertEquals(3, $this->formatter->getPrecision());
+        $this->assertEquals("2.333GB", $this->formatter->format($bytes));
+    }
+
+    /**
+     * Test that the format method can override the default precision
+     *
+     * @test
+     */
+    public function testFormatMethodCanOverrideDefaultPrecision()
+    {
+        $bytes = "2333333000"; // 2.333333 GB
+
+        $this->assertEquals(2, $this->formatter->getPrecision());
+        $this->assertEquals("2.333GB", $this->formatter->format($bytes, 3));
+    }
+
+    /**
      * Test that the format method returns expected values
      *
      * @test
      */
-    public function testConvertMethod()
+    public function testFormatMethodReturnsExpectedValues()
     {
-        $this->assertEquals('1B',     $this->formatter->format(bcmul(1.00, bcpow(1000, 0))));
-        $this->assertEquals('1.00kB', $this->formatter->format(bcmul(1.00, bcpow(1000, 1))));
-        $this->assertEquals('1.25kB', $this->formatter->format(bcmul(1.25, bcpow(1000, 1))));
-        $this->assertEquals('1.50MB', $this->formatter->format(bcmul(1.50, bcpow(1000, 2))));
-        $this->assertEquals('1.75GB', $this->formatter->format(bcmul(1.75, bcpow(1000, 3))));
-        $this->assertEquals('2.00TB', $this->formatter->format(bcmul(2.00, bcpow(1000, 4))));
-        $this->assertEquals('2.25PB', $this->formatter->format(bcmul(2.25, bcpow(1000, 5))));
-        $this->assertEquals('2.50EB', $this->formatter->format(bcmul(2.50, bcpow(1000, 6))));
-        $this->assertEquals('2.75ZB', $this->formatter->format(bcmul(2.75, bcpow(1000, 7))));
-        $this->assertEquals('3.00YB', $this->formatter->format(bcmul(3.00, bcpow(1000, 8))));
+        $this->assertEquals("5B",     $this->formatter->format("5"));
+        $this->assertEquals("5.25kB", $this->formatter->format("5250"));
+        $this->assertEquals("5.25MB", $this->formatter->format("5250000"));
+        $this->assertEquals("5.25GB", $this->formatter->format("5250000000"));
+        $this->assertEquals("5.25TB", $this->formatter->format("5250000000000"));
+        $this->assertEquals("5.25PB", $this->formatter->format("5250000000000000"));
+        $this->assertEquals("5.25EB", $this->formatter->format("5250000000000000000"));
+        $this->assertEquals("5.25ZB", $this->formatter->format("5250000000000000000000"));
+        $this->assertEquals("5.25YB", $this->formatter->format("5250000000000000000000000"));
     }
 
 }
