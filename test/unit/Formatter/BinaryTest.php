@@ -1,20 +1,46 @@
 <?php
+/**
+ * Rych ByteSize
+ *
+ * Simple byte size formatting library.
+ *
+ * @package   Rych\ByteSize
+ * @copyright Copyright (c) 2014, Ryan Chouinard
+ * @author    Ryan Chouinard <rchouinard@gmail.com>
+ * @license   MIT
+ */
 
 namespace Rych\ByteSize\Formatter;
 
 use PHPUnit_Framework_TestCase as TestCase;
 
+/**
+ * Binary formatter test
+ *
+ * Tests for the binary formatter class.
+ */
 class BinaryTest extends TestCase
 {
 
+    /**
+     * @var \Rych\ByteSize\Formatter\Binary
+     */
     protected $formatter;
 
+    /**
+     * @inheritDoc
+     */
     public function setUp()
     {
         $this->formatter = new Binary();
     }
 
-    public function testConvertMethod()
+    /**
+     * Test that the format method returns expected values
+     *
+     * @test
+     */
+    public function testFormatMethod()
     {
         $this->assertEquals('1B',      $this->formatter->format(bcmul(1.00, bcpow(1024, 0))));
         $this->assertEquals('1.00KiB', $this->formatter->format(bcmul(1.00, bcpow(1024, 1))));

@@ -1,33 +1,38 @@
 <?php
 /**
- * ByteSize - A File Size Formatting Component
+ * Rych ByteSize
  *
- * @package Rych\ByteSize
- * @author Ryan Chouinard <rchouinard@gmail.com>
- * @copyright Copyright (c) 2013, Ryan Chouinard
- * @license MIT License - http://www.opensource.org/licenses/mit-license.php
+ * Simple byte size formatting library.
+ *
+ * @package   Rych\ByteSize
+ * @copyright Copyright (c) 2014, Ryan Chouinard
+ * @author    Ryan Chouinard <rchouinard@gmail.com>
+ * @license   MIT
  */
 
 namespace Rych\ByteSize\Formatter;
 
 /**
- * Binary file size formatter
+ * Binary formatter
  *
- * @package Rych\ByteSize
- * @author Ryan Chouinard <rchouinard@gmail.com>
- * @copyright Copyright (c) 2013, Ryan Chouinard
- * @license MIT License - http://www.opensource.org/licenses/mit-license.php
+ * Formats byte values using the binary standard values. This formatter
+ * assumes 1 kilobyte = 1024 bytes.
+ *
  * @link http://en.wikipedia.org/wiki/Binary_prefix Binary prefix at Wikipedia
  */
 final class Binary extends AbstractFormatter
 {
 
     /**
+     * Base value used by this formatter
+     *
      * @var integer
      */
     protected $base = 1024;
 
     /**
+     * Suffixes used by this formatter
+     *
      * @var array
      */
     protected $suffixes = array (

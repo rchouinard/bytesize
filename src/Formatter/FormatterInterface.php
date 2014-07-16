@@ -1,11 +1,13 @@
 <?php
 /**
- * ByteSize - A File Size Formatting Component
+ * Rych ByteSize
  *
- * @package Rych\ByteSize
- * @author Ryan Chouinard <rchouinard@gmail.com>
- * @copyright Copyright (c) 2013, Ryan Chouinard
- * @license MIT License - http://www.opensource.org/licenses/mit-license.php
+ * Simple byte size formatting library.
+ *
+ * @package   Rych\ByteSize
+ * @copyright Copyright (c) 2014, Ryan Chouinard
+ * @author    Ryan Chouinard <rchouinard@gmail.com>
+ * @license   MIT
  */
 
 namespace Rych\ByteSize\Formatter;
@@ -13,21 +15,18 @@ namespace Rych\ByteSize\Formatter;
 /**
  * Formatter interface
  *
- * @package Rych\ByteSize
- * @author Ryan Chouinard <rchouinard@gmail.com>
- * @copyright Copyright (c) 2013, Ryan Chouinard
- * @license MIT License - http://www.opensource.org/licenses/mit-license.php
+ * Provides a standard interface for ByteSize formatters.
  */
 interface FormatterInterface
 {
 
     /**
-     * Format input into a human-friendly string for display.
+     * Format input into a human-friendly string for display
      *
-     * @param integer|string $bytes Integer or string representing the number
-     *     of bytes.
-     * @param integer $precision Number of significant digits to include in the
-     *     formatted output.
+     * @param  integer|string $bytes Integer or string representing the number
+     *   of bytes.
+     * @param  integer $precision Number of significant digits to include in the
+     *   formatted output.
      * @return string Returns a human-friendly formatted string.
      */
     public function format($bytes, $precision);

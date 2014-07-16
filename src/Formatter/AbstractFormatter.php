@@ -1,11 +1,13 @@
 <?php
 /**
- * ByteSize - A File Size Formatting Component
+ * Rych ByteSize
  *
- * @package Rych\ByteSize
- * @author Ryan Chouinard <rchouinard@gmail.com>
- * @copyright Copyright (c) 2013, Ryan Chouinard
- * @license MIT License - http://www.opensource.org/licenses/mit-license.php
+ * Simple byte size formatting library.
+ *
+ * @package   Rych\ByteSize
+ * @copyright Copyright (c) 2014, Ryan Chouinard
+ * @author    Ryan Chouinard <rchouinard@gmail.com>
+ * @license   MIT
  */
 
 namespace Rych\ByteSize\Formatter;
@@ -13,41 +15,47 @@ namespace Rych\ByteSize\Formatter;
 /**
  * Abstract formatter
  *
- * @package Rych\ByteSize
- * @author Ryan Chouinard <rchouinard@gmail.com>
- * @copyright Copyright (c) 2013, Ryan Chouinard
- * @license MIT License - http://www.opensource.org/licenses/mit-license.php
+ * Provides base functionality for ByteSize formatters.
  */
 abstract class AbstractFormatter implements FormatterInterface
 {
 
     /**
+     * Base value used by this formatter
+     *
      * @var integer
      */
     protected $base;
 
     /**
+     * Default precision value
+     *
+     * Affects the number of significant digits to include in the formatted
+     * value.
+     *
      * @var integer
      */
     protected $precision = 2;
 
     /**
+     * Suffixes used by this formatter
+     *
      * @var array
      */
     protected $suffixes = array ();
 
     /**
-     * Format input into a human-friendly string for display.
+     * Format input into a human-friendly string for display
      *
      * @uses \bccomp()
-     * @uses \Rych\ByteSize\Formatter\AbstractFormatter::divPow()
-     * @uses \Rych\ByteSize\Formatter\AbstractFormatter::formatNumber()
-     * @uses \Rych\ByteSize\Formatter\AbstractFormatter::normalizeBytes()
+     * @uses AbstractFormatter::divPow()
+     * @uses AbstractFormatter::formatNumber()
+     * @uses AbstractFormatter::normalizeBytes()
      *
-     * @param integer|string $bytes Integer or string representing the number
-     *     of bytes.
-     * @param integer $precision Number of significant digits to include in the
-     *     formatted output. Defaults to 2.
+     * @param  integer|string $bytes Integer or string representing the number
+     *   of bytes.
+     * @param  integer $precision Number of significant digits to include in the
+     *   formatted output. Defaults to 2.
      * @return string Returns a human-friendly formatted string.
      */
     public function format($bytes, $precision = null)
@@ -66,7 +74,7 @@ abstract class AbstractFormatter implements FormatterInterface
     }
 
     /**
-     * Get the currently configured default precision value.
+     * Get the default precision value
      *
      * @return integer Returns the currently configured precision.
      */
@@ -76,13 +84,13 @@ abstract class AbstractFormatter implements FormatterInterface
     }
 
     /**
-     * Set the default precision value.
+     * Set the default precision value
      *
-     * @uses \Rych\ByteSize\Formatter\AbstractFormatter::normalizePrecision()
+     * @uses AbstractFormatter::normalizePrecision()
      *
-     * @param integer $precision An integer between 0 and 10.
-     * @return \Rych\ByteSize\Formatter\AbstractFormatter Returns an instance of
-     *     self for method chaining.
+     * @param  integer $precision An integer between 0 and 10.
+     * @return AbstractFormatter Returns an instance of self for method
+     *   chaining.
      */
     public function setPrecision($precision)
     {
@@ -92,7 +100,7 @@ abstract class AbstractFormatter implements FormatterInterface
     }
 
     /**
-     * Shortcut method to divide a dividend by the result of a power operation.
+     * Divide a dividend by result of power operation
      *
      * The return value will be a string representation of the result. This is
      * due to the BCMath library and so we can work with very large integers.
@@ -100,10 +108,10 @@ abstract class AbstractFormatter implements FormatterInterface
      * @uses \bcdiv()
      * @uses \bcpow()
      *
-     * @param integer|string $dividend The dividend to use in the division
-     *     operation.
-     * @param integer $base The base for the power operation.
-     * @param integer $power The power $base should be raised by.
+     * @param  integer|string $dividend The dividend to use in the division
+     *   operation.
+     * @param  integer $base The base for the power operation.
+     * @param  integer $power The power $base should be raised by.
      * @return string Returns the result of the operations.
      */
     protected function divPow($dividend, $base, $power)
@@ -112,27 +120,27 @@ abstract class AbstractFormatter implements FormatterInterface
     }
 
     /**
-     * Format a number with the given suffix and precision.
+     * Format a float value with given suffix
      *
-     * @uses \Rych\ByteSize\Formatter\AbstractFormatter::normalizePrecision()
+     * @uses AbstractFormatter::normalizePrecision()
      *
-     * @param integer|float $float The number to format.
-     * @param string $suffix The suffix to attach.
-     * @param integer $precision The number of significant digits to include.
+     * @param  integer|float $float The number to format.
+     * @param  string $suffix The suffix to attach.
+     * @param  integer $precision The number of significant digits to include.
      * @return string Returns the formatted string.
      */
     protected function formatNumber($float, $suffix, $precision = null)
     {
         if ($precision === null) {
             $precision = $this->precision;
-        };
+        }
         $precision = $this->normalizePrecision($precision);
 
         return sprintf("%.{$precision}f%s", $float, $suffix);
     }
 
     /**
-     * Normalize bytes value into a usable value.
+     * Normalize bytes value
      *
      * The resulting value is a string representation of the bytes value. This
      * is done by the BCMath library so we can work with very large integer
@@ -142,7 +150,7 @@ abstract class AbstractFormatter implements FormatterInterface
      * @uses \bccomp()
      * @uses \filter_var()
      *
-     * @param integer|float|string $bytes The bytes value.
+     * @param  integer|float|string $bytes The bytes value.
      * @return string Returns the normalized value.
      */
     protected function normalizeBytes($bytes)
@@ -157,13 +165,13 @@ abstract class AbstractFormatter implements FormatterInterface
     }
 
     /**
-     * Normalize precision value into a usable value.
+     * Normalize precision value
      *
      * The resulting value is an integer value between 0 and 10.
      *
      * @uses \filter_var()
      *
-     * @param integer $precision The precision value.
+     * @param  integer $precision The precision value.
      * @return integer Returns the normalized value.
      */
     protected function normalizePrecision($precision)

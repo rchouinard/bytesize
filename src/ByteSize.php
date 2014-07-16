@@ -1,54 +1,56 @@
 <?php
 /**
- * ByteSize - A File Size Formatting Component
+ * Rych ByteSize
  *
- * @package Rych\ByteSize
- * @author Ryan Chouinard <rchouinard@gmail.com>
- * @copyright Copyright (c) 2013, Ryan Chouinard
- * @license MIT License - http://www.opensource.org/licenses/mit-license.php
+ * Simple byte size formatting library.
+ *
+ * @package   Rych\ByteSize
+ * @copyright Copyright (c) 2014, Ryan Chouinard
+ * @author    Ryan Chouinard <rchouinard@gmail.com>
+ * @license   MIT
  */
 
 namespace Rych\ByteSize;
 
 /**
- * Main component class
+ * ByteSize class
  *
- * @package Rych\ByteSize
- * @author Ryan Chouinard <rchouinard@gmail.com>
- * @copyright Copyright (c) 2013, Ryan Chouinard
- * @license MIT License - http://www.opensource.org/licenses/mit-license.php
+ * Provides convenience access to the byte size formatters.
  */
 class ByteSize
 {
 
     /**
+     * Default FormatterInterface instance
      *
-     * @var \Rych\ByteSize\Formatter\FormatterInterface
+     * @var Formatter\FormatterInterface
      */
     protected $formatter;
 
     /**
-     * Class constructor.
+     * ByteSize constructor
      *
-     * @param \Rych\ByteSize\Formatter\FormatterInterface $formatter
+     * @param  Formatter\FormatterInterface $formatter Instance of
+     *   FormatterInterface to use by default. If not passed, an instance of
+     *   Formatter\Metric will be used.
      * @return void
      */
     public function __construct(Formatter\FormatterInterface $formatter = null)
     {
         if (!$formatter) {
-            $formatter = new Formatter\Metric;
+            $formatter = new Formatter\Metric();
         }
 
         $this->formatter = $formatter;
     }
 
     /**
-     * Proxy method for the formatter's format() method.
+     * Formatter proxy
      *
-     * @param integer|string $bytes Integer or string representing the number
-     *     of bytes.
-     * @param integer $precision Number of significant digits to include in the
-     *     formatted output.
+     * @param  integer|string $bytes Integer or string representing the number
+     *   of bytes.
+     * @param  integer $precision Number of significant digits to include in the
+     *   formatted output.
      * @return string Returns a human-friendly formatted string.
      */
     public function format($bytes, $precision = null)
@@ -57,44 +59,44 @@ class ByteSize
     }
 
     /**
-     * Static proxy to the binary formatter's format() method.
+     * Binary formatter static proxy
      *
-     * @staticvar \Rych\ByteSize\Formatter\Binary $formatter
-     * @uses \Rych\ByteSize\Formatter\Binary::format()
+     * @staticvar Formatter\Binary $formatter
+     * @uses Formatter\Binary::format()
      *
-     * @param integer|string $bytes Integer or string representing the number
-     *     of bytes.
-     * @param integer $precision Number of significant digits to include in the
-     *     formatted output.
+     * @param  integer|string $bytes Integer or string representing the number
+     *   of bytes.
+     * @param  integer $precision Number of significant digits to include in the
+     *   formatted output.
      * @return string Returns a human-friendly formatted string.
      */
     public static function formatBinary($bytes, $precision = null)
     {
         static $formatter = null;
         if (!$formatter) {
-            $formatter = new Formatter\Binary;
+            $formatter = new Formatter\Binary();
         }
 
         return $formatter->format($bytes, $precision);
     }
 
     /**
-     * Static proxy to the metric formatter's format() method.
+     * Metric formatter static proxy
      *
-     * @staticvar \Rych\ByteSize\Formatter\Metric $formatter
-     * @uses \Rych\ByteSize\Formatter\Metric::format()
+     * @staticvar Formatter\Metric $formatter
+     * @uses Formatter\Metric::format()
      *
-     * @param integer|string $bytes Integer or string representing the number
-     *     of bytes.
-     * @param integer $precision Number of significant digits to include in the
-     *     formatted output.
+     * @param  integer|string $bytes Integer or string representing the number
+     *   of bytes.
+     * @param  integer $precision Number of significant digits to include in the
+     *   formatted output.
      * @return string Returns a human-friendly formatted string.
      */
     public static function formatMetric($bytes, $precision = null)
     {
         static $formatter = null;
         if (!$formatter) {
-            $formatter = new Formatter\Metric;
+            $formatter = new Formatter\Metric();
         }
 
         return $formatter->format($bytes, $precision);
