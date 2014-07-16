@@ -18,7 +18,7 @@ namespace Rych\ByteSize\Formatter;
  * @copyright Copyright (c) 2013, Ryan Chouinard
  * @license MIT License - http://www.opensource.org/licenses/mit-license.php
  */
-abstract class AbstractFormatter
+abstract class AbstractFormatter implements FormatterInterface
 {
 
     /**

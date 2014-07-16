@@ -19,7 +19,7 @@ namespace Rych\ByteSize\Formatter;
  * @license MIT License - http://www.opensource.org/licenses/mit-license.php
  * @link http://en.wikipedia.org/wiki/Binary_prefix Binary prefix at Wikipedia
  */
-final class Binary extends AbstractFormatter implements FormatterInterface
+final class Binary extends AbstractFormatter
 {
 
     /**

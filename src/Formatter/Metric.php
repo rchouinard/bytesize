@@ -19,7 +19,7 @@ namespace Rych\ByteSize\Formatter;
  * @license MIT License - http://www.opensource.org/licenses/mit-license.php
  * @link http://en.wikipedia.org/wiki/Metric_prefix Metric prefix at Wikipedia
  */
-final class Metric extends AbstractFormatter implements FormatterInterface
+final class Metric extends AbstractFormatter
 {
 
     /**
