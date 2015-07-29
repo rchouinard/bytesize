@@ -1,15 +1,30 @@
-ByteSize: Nicely Formatted File Sizes
-=====================================
+# ByteSize: File Size Formatter for PHP
+
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+[![Build Status][ico-travis]][link-travis]
+[![Quality Score][ico-code-quality]][link-code-quality]
+[![Total Downloads][ico-downloads]][link-downloads]
 
 ByteSize is a utility component for formatting file sizes in various formats.
-It's currently a rough project and subject to some pretty major changes as I
-think things through.
-
-Build status: [![Build Status](https://travis-ci.org/rchouinard/bytesize.png?branch=master)](https://travis-ci.org/rchouinard/bytesize)
 
 
-Usage
------
+## Requirements
+
+ - PHP 5.3+
+ - BCMath extension
+
+
+## Install
+
+Via Composer
+
+``` bash
+$ composer require rych/bytesize
+```
+
+
+## Usage
 
 Basic usage is very simple. Create an instance of `Rych\ByteSize\ByteSize` and
 call its `format()` method.
@@ -62,37 +77,29 @@ echo ByteSize::formatBinary(1509949); // 1.44MiB
 ```
 
 
-Requirements
-------------
+## Testing
 
-Just PHP 5.3+ and the BCMath extension. BCMath is used to handle very large
-integer values and file sizes greater than 2GB on 32-bit systems.
-
-
-Installation via [Composer](http://getcomposer.org/)
-------------
-
- * Install Composer to your project root:
-    ```bash
-    curl -sS https://getcomposer.org/installer | php
-    ```
-
- * Add a `composer.json` file to your project:
-    ```json
-    {
-      "require" {
-        "rych/bytesize": "1.0.*"
-      }
-    }
-    ```
-
- * Run the Composer installer:
-    ```bash
-    php composer.phar install
-    ```
+``` bash
+$ vendor/bin/phpunit -c phpunit.dist.xml
+```
 
 
-Is that it?
------------
+## License
 
-Pretty much.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+
+[ico-version]: https://img.shields.io/packagist/v/rych/bytesize.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/rchouinard/bytesize.svg?style=flat-square
+[ico-coveralls]: https://img.shields.io/coveralls/rchouinard/bytesize.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/sensiolabs/i/06ed0bcf-8415-4d1e-9808-09c05e832318.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/rych/bytesize.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/rych/bytesize
+[link-travis]: https://travis-ci.org/rchouinard/bytesize
+[link-coveralls]: https://coveralls.io/r/rchouinard/bytesize
+[link-code-quality]: https://insight.sensiolabs.com/projects/06ed0bcf-8415-4d1e-9808-09c05e832318
+[link-downloads]: https://packagist.org/packages/rych/bytesize
+[link-author]: https://github.com/rchouinard
+[link-contributors]: https://github.com/rchouinard/bytesize/graphs/contributors
